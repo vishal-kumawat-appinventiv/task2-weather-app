@@ -27,3 +27,18 @@
 .weatherWindSpeed {
     margin-bottom: 6px;
 }
+
+.tempContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.toggleButton {
+    border: none;
+    padding: 0px 8px;
+    background-color: #437cb9;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 16px;
+}
