@@ -7,17 +7,21 @@ interface WeatherDataProps {
 
 const WeatherInfo: React.FC<WeatherDataProps> = ({ weatherData }) => {
   return (
-    <>
-      <div>
-        <p>
-          {weatherData.city}, {weatherData.country}
-        </p>
-        <p>Temperature: {weatherData.temperature}°C</p>
-        <p>Description: {weatherData.description}</p>
-        <p>Humidity: {weatherData.humidity}%</p>
-        <p>Wind Speed: {weatherData.windSpeed} m/s</p>
-      </div>
-    </>
+    <div className="weatherContainer">
+      <p className="weatherCityCountry">
+        {weatherData.city}, {weatherData.country}
+      </p>
+      <p className="weatherTemperature">
+        Temperature: {weatherData.temperature.toFixed(1)}°C
+      </p>
+      <p className="weatherDescription">
+        Description: {weatherData.description}
+      </p>
+      <p className="weatherHumidity">Humidity: {weatherData.humidity}%</p>
+      <p className="weatherWindSpeed">
+        Wind Speed: {weatherData.windSpeed} m/s
+      </p>
+    </div>
   );
 };
 

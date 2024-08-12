@@ -41,9 +41,9 @@ function App() {
         <Header />
         <SearchBar onSearch={handleSearch} />
         {loading ? (
-          <h3>Loading...</h3>
+          <h3 className="loading">Loading...</h3>
         ) : error ? (
-          <h3>No Data Found !</h3>
+          <h3 className="errorMsg">No Data Found !</h3>
         ) : (
           weatherData && <WeatherInfo weatherData={weatherData} />
         )}

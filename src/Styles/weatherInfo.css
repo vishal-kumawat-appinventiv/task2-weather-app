@@ -1,0 +1,28 @@
+.weatherContainer {
+    background-color: #f0f4f8;
+    border-radius: 3px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px 1px;
+    font-family: Arial, sans-serif;
+}
+
+.weatherCityCountry {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.weatherTemperature {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.weatherDescription {
+    margin-bottom: 8px;
+}
+
+.weatherHumidity,
+.weatherWindSpeed {
+    margin-bottom: 6px;
+}

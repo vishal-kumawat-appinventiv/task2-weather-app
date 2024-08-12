@@ -1,6 +1,12 @@
 import "../Styles/header.css";
 const Header = () => {
-  return <h1>Weather Finder</h1>;
+  return (
+    <>
+      <div className="headingContainer">
+        <h1 className="heading">Weather Finder</h1>
+      </div>
+    </>
+  );
 };
 
 export default Header;
