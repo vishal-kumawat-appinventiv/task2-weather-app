@@ -1,5 +1,6 @@
 .inputBar {
     border: none;
+    outline: none;
     font-size: 1.5rem;
     padding: 10px 10px;
 }

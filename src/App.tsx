@@ -15,7 +15,9 @@ function App() {
       setError(false);
       setLoading(true);
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=3045dd712ffe6e702e3245525ac7fa38`
+        `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${
+          import.meta.env.VITE_WEATHER_API_KEY
+        }`
       );
       const data = {
         city: response?.data?.name,
