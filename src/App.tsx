@@ -7,9 +7,13 @@ import { WeatherDataType } from "./types";
 
 function App() {
   const [weatherData, setWeatherData] = useState<WeatherDataType>();
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
 
   const handleSearch = async (cityName: string) => {
     try {
+      setError(false);
+      setLoading(true);
       const response = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=3045dd712ffe6e702e3245525ac7fa38`
       );
@@ -22,8 +26,12 @@ function App() {
         windSpeed: response?.data?.wind?.speed,
       };
       setWeatherData(data);
+      setLoading(false);
     } catch (error) {
       console.error("Error getting weather data:", error);
+      setError(true);
+      setLoading(false);
+      return;
     }
   };
 
@@ -32,14 +40,12 @@ function App() {
       <div className="main">
         <Header />
         <SearchBar onSearch={handleSearch} />
-        {weatherData ? (
-          <>
-            <WeatherInfo weatherData={weatherData} />
-          </>
+        {loading ? (
+          <h3>Loading...</h3>
+        ) : error ? (
+          <h3>No Data Found !</h3>
         ) : (
-          <>
-            <h3>No Data Found!</h3>
-          </>
+          weatherData && <WeatherInfo weatherData={weatherData} />
         )}
       </div>
     </>
